@@ -1,0 +1,9 @@
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+<h2 class="text-center">PAGE GOSSIP </h2>
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+  <p> Voici le gossip n° <%= @gossip.id%><br/>
+  Auteur : <%= @gossip.user.first_name %> <%= @gossip.user.last_name %><br/>
+  Titre : <%= @gossip.title %><br/>
+  Créé le : <%= @gossip.created_at.strftime('%d/%m/%Y') %><br/>
+  Le contenu du gossip : <%= @gossip.content %>
+  </p>

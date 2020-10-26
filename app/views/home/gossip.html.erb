@@ -1,0 +1,21 @@
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+<h2 class="text-center">Les derniers gossips</h2>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+  <div class="card-deck mx-auto text-center justify-content-center ">
+    <div class="col-sm-4">
+        <% @all_gossips.each do |gossip| %>
+          <div class="card text-white bg-success mb-4 border-right-0" >
+            <div class="card-header bg-dark text-warning">
+
+              <%= gossip.user.first_name %> <%= gossip.user.last_name %>
+            </div>
+            <div class="card-body">
+              Titre du gossip : 
+              <h5 class="card-title"><%= gossip.title %></h5>
+              <%= link_to 'Détail', home_show_gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-dark' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
