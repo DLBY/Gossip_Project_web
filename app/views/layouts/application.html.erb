@@ -8,14 +8,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand text-warning " <%= link_to "The Gossip Project", home_gossip_path %></a>
+        <a class="navbar-brand text-warning " <%= link_to "The Gossip Project", root_path %></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -31,11 +31,11 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link"<%= link_to "Accueil", home_gossip_path %></a>
+              <a class="nav-link"<%= link_to "Accueil", root_path %></a>
                 <span class="sr-only"></span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Créer un gossip</a>
+              <a class="nav-link"<%= link_to "Créer un gossip", new_gossip_path %></a>
             </li>
             <li class="nav-item dropdown">
               <a

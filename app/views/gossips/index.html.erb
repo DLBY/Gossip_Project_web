@@ -13,9 +13,12 @@
             <div class="card-body">
               Titre du gossip : 
               <h5 class="card-title"><%= gossip.title %></h5>
-              <%= link_to 'Détail', home_show_gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-dark' %>
+              <%= link_to 'Détail', gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-dark' %>
+                            
+              <%= link_to 'Voir profil', user_show_path(:user_id => gossip.user.id), class: 'btn btn-secondary bg-dark' %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
+ 
