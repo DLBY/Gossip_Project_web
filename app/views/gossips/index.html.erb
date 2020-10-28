@@ -4,7 +4,7 @@
 
   <div class="card-deck mx-auto text-center justify-content-center ">
     <div class="col-sm-4">
-        <% @all_gossips.each do |gossip| %>
+        <% @gossips.each do |gossip| %>
           <div class="card text-white bg-success mb-4 border-right-0" >
             <div class="card-header bg-dark text-warning">
 
@@ -15,7 +15,7 @@
               <h5 class="card-title"><%= gossip.title %></h5>
               <%= link_to 'Détail', gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-dark' %>
                             
-              <%= link_to 'Voir profil', user_show_path(:user_id => gossip.user.id), class: 'btn btn-secondary bg-dark' %>
+              <%= link_to 'Voir profil', user_show_path(:user_id => gossip.user.id), class: 'btn btn-secondary bg-dark' %> <!-- Ici on va remplacer par le bouton edit-->
             </div>
           </div>
         <% end %>

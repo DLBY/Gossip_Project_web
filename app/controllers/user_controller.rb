@@ -2,6 +2,7 @@ class UserController < ApplicationController
 
   def index
     @users = User.all
+    @cities = City.all
   end
 
   def show
