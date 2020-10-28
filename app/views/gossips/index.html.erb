@@ -2,20 +2,20 @@
 <h2 class="text-center">Les derniers gossips</h2>
 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
 
-  <div class="card-deck mx-auto text-center justify-content-center ">
+  <div class="card-deck mx-auto text-center justify-content-center">
     <div class="col-sm-4">
         <% @gossips.each do |gossip| %>
-          <div class="card text-white bg-success mb-4 border-right-0" >
-            <div class="card-header bg-dark text-warning">
+          <div class="card text-white bg-dark mb-4 border-right-0 border-warning mb-3" >
+            <div class="card-header bg-secondary text-warning">
 
               <%= gossip.user.first_name %> <%= gossip.user.last_name %>
             </div>
             <div class="card-body">
               Titre du gossip : 
               <h5 class="card-title"><%= gossip.title %></h5>
-              <%= link_to 'Détail', gossip_path(:id => gossip.id), class: 'btn btn-secondary bg-dark' %>
+              <%= link_to 'Détail', gossip_path(:id => gossip.id), class: 'btn-grad' %>
                             
-              <%= link_to 'Voir profil', user_show_path(:user_id => gossip.user.id), class: 'btn btn-secondary bg-dark' %> <!-- Ici on va remplacer par le bouton edit-->
+              <%= link_to 'Voir profil', user_show_path(:user_id => gossip.user.id), class: 'btn-grad' %> <!-- Ici on va remplacer par le bouton edit-->
             </div>
           </div>
         <% end %>

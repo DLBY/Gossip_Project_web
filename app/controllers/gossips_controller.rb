@@ -23,6 +23,14 @@ class GossipsController < ApplicationController
     @gossip = Gossip.new
   end
 
+ def destroy
+    @gossip = Gossip.find(params[:id])
+
+    @gossip.destroy
+    flash[:succes] = "Gossip supprimé"
+    redirect_to root_path
+  end
+
   def create
     @gossip = Gossip.new(title: params[:title],content: params[:content], user: User.first)
 
@@ -33,11 +41,11 @@ class GossipsController < ApplicationController
       flash[:failure] = "Erreur lors de la publication du gossip !"
       redirect_to request.referrer
     end
-
+  end
 
   def gossip_params
     params.require(:gossip).permit(:title, :content)
   end
 
-  end
+  
 end

@@ -4,6 +4,6 @@ class Gossip < ApplicationRecord
   has_many :tags, through: :JoinTableTagGossips
 
   validates :title, presence: true, 
-  length: { minimum: 3, maximum: 14, message: "Le titre doit contenir entre 3 et 14 caractères."} 
+  length: { minimum: 3, maximum: 20, message: "Le titre doit contenir entre 3 et 14 caractères."} 
   validates :content,presence: true
 end
