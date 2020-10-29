@@ -15,7 +15,7 @@
               <h5 class="card-title"><%= gossip.title %></h5>
               <%= link_to 'Détail', gossip_path(:id => gossip.id), class: 'btn-grad' %>
                             
-              <%= link_to 'Voir profil', user_show_path(:user_id => gossip.user.id), class: 'btn-grad' %> 
+              <%= link_to 'Voir profil', users_path(:user_id => gossip.user.id), class: 'btn-grad' %> 
             </div>
           </div>
         <% end %>

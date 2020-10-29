@@ -3,10 +3,6 @@ Rails.application.routes.draw do
 
   root 'gossips#index'
 
-  get 'cities/show'
-
-  get 'user/show'
-
   get '/contact', to: 'static#contact'
 
   get '/team', to: 'static#team'
@@ -15,5 +11,6 @@ Rails.application.routes.draw do
   resources :users
   resources :cities, only:[:show]
   resources :comments
+  resources :sessions, only: [:new, :create, :destroy]
   
 end
