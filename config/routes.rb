@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   get '/team', to: 'static#team'
 
+  get '/login'     => 'sessions#new'
+
+  post '/login'    => 'sessions#create'
+
+  delete '/logout' => 'sessions#destroy'  
+  
   resources :gossips
   resources :users
   resources :cities, only:[:show]

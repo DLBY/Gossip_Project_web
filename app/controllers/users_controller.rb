@@ -30,8 +30,7 @@ class UsersController < ApplicationController
 
     @user = User.new(params.permit(:first_name, :last_name, :email, :age, :description, :password,))
     @user.city_id = 19
-    
-    puts params.inspect
+
     if @user.save
       flash[:success] = "Compte bien créé !"
       redirect_to root_path
