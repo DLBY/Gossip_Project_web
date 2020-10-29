@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/team', to: 'static#team'
 
   resources :gossips
-  resources :users, only:[:show] 
+  resources :users
   resources :cities, only:[:show]
   resources :comments
   
