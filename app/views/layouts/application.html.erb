@@ -37,9 +37,30 @@
             <li class="nav-item">
               <a class="nav-link"<%= link_to "Créer un gossip", new_gossip_path %></a>
               </li>
-              <li>
-              <a class="nav-link"<%= link_to "Créer un compte", new_user_path %></a>
+
+
+          <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Compte
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item"<%= link_to "Créer un compte", new_user_path %></a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"<%= link_to "Se connecter", new_session_path %></a>
+                <a class="dropdown-item"<%= link_to "Se déconnecter", session_path(session.id), method: :delete %></a>
+              </div>
             </li>
+
+            
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -60,8 +81,9 @@
             </li>
           </ul>
         </div>
-        
       </nav>
+
+
     <% if flash[:success] %>
     <div class="alert alert-success"> <%=flash[:success]%></div>
     <% end%>
