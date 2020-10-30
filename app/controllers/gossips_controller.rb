@@ -34,7 +34,7 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new(title: params[:title],content: params[:content]
+    @gossip = Gossip.new(title: params[:title],content: params[:content])
       @gossip.user = current_user
 
     if @gossip.save
