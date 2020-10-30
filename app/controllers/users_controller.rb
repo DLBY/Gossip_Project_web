@@ -29,7 +29,8 @@ class UsersController < ApplicationController
 =end
 
     @user = User.new(params.permit(:first_name, :last_name, :email, :age, :description, :password,))
-    @user.city_id = 19
+    @user.city = City.find_by(params.permit(:zip_code))
+    @user.valid?
 
     if @user.save
       flash[:success] = "Compte bien créé !"

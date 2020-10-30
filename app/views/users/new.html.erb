@@ -22,6 +22,9 @@
       <%= number_field_tag 'age'%>
       <br /> <br />
 
+       <%= select_tag "zip_code", options_from_collection_for_select(@cities.sort_by(&:name),"zip_code","name"), prompt: "Sélectionne ta ville" %>
+        <br /> <br />
+
       <%= label_tag 'Bio :' %>
       <%= text_area_tag 'description'%>
       <br /> <br />
